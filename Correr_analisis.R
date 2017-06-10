@@ -25,7 +25,9 @@ for (i in 1:30){
 row.names(promedios) <- nombres
 colnames(promedios) <- names(resultado[3:ncol(resultado)])
 promedios
-dir.create("./orden")
+if (file.exists("orden")== F){
+  dir.create("./orden") 
+}
 write.csv(tablaf, "./orden/data_orden.csv")
 write.table(tablaf, "./orden/data_orden.txt")
 write.csv(promedios, "./orden/promedios.csv")
